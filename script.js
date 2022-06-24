@@ -3,7 +3,18 @@ let buttonIn = document.querySelector('.button-in');
 let div = document.querySelector('.output');
 
 buttonIn.onclick = function(){
-    let valueInput = inputIn.value;
-    console.log(valueInput);
-    div.innerHTML = 'Привет, ' + valueInput;
+    if(KeyboardEvent ===13){
+        let valueInput = inputIn.value;
+        div.innerHTML = 'Привет, ' + valueInput;
+    }
+    else{
+        let valueInput = inputIn.value;
+        div.innerHTML = 'Привет, ' + valueInput;
+    }
 };
+document.addEventListener('keydown', function(event) {
+    if (event.code == 'Enter') {
+        let valueInput = inputIn.value;
+        div.innerHTML = 'Привет, ' + valueInput;
+    }
+});
